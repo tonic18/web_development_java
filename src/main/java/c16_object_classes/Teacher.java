@@ -1,0 +1,62 @@
+package c16_object_classes;
+
+import java.util.Objects;
+
+public class Teacher {
+    // 필드 설정
+    private String name;
+    public String schoolName;
+
+
+
+    public Teacher() {
+    }
+
+    // AllArgsConstructor 만드세
+    public Teacher(String name, String schoolName) {
+        this.name = name;
+        this.schoolName = schoolName;
+    }
+
+    // getter setter 만드세요
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getSchoolName() {
+        return schoolName;
+    }
+    public void setSchoolName(String schoolName) {
+        this.schoolName = schoolName;
+    }
+
+    // toString override 하세요
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "name='" + name + '\'' +
+                ", schoolName='" + schoolName + '\'' +
+                '}';
+    }
+
+    // equals override 하세요
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Teacher teacher = (Teacher) o;
+        return Objects.equals(name, teacher.name) && Objects.equals(schoolName, teacher.schoolName);
+    }
+    // hashCode override 하세요
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, schoolName);
+    }
+
+
+
+}
